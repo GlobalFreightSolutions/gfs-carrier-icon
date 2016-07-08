@@ -1,0 +1,8 @@
+{
+	"name": "gfs-carrier-icon".
+	"description": "Add a description",
+	"dependencies": {
+		"polymer": "~1.6.0"
+	},
+	"private": true
+}
