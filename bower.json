@@ -1,14 +1,16 @@
 {
-	"name": "gfs-carrier-icon".
+	"name": "gfs-carrier-icon",
+	"version": "0.0.1",
 	"description": "Add a description",
 	"dependencies": {
 		"polymer": "~1.6.0"
 	},
+	"main":"gfs-carrier-icon.html",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon"
 	},
 	"ignore": [
-		"**/.*"
+	],
 	"private": true
 }
