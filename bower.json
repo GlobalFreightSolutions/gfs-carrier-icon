@@ -4,5 +4,11 @@
 	"dependencies": {
 		"polymer": "~1.6.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon"
+	},
+	"ignore": [
+		"**/.*"
 	"private": true
 }
