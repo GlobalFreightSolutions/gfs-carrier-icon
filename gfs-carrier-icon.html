@@ -19,17 +19,23 @@
                 height: 78px;
             }
 
-			@media (max-width: 490px) {
-				.icon:nth-child(1n) {
-					margin: 0 0 10px
-				}
-			}
+            @media (max-width: 490px) {
+                .icon:nth-child(1n) {
+                    margin: 0 0 10px
+                }
+            }
+
+            @media (max-width: 320px) {
+                .medium img {
+                    height: 58px;
+                }
+            }
         </style>
 
         <div class$="icon {{iconSize}}">
-			<a href="{{carrierURL}}" target="_blank"><img src="/bower_components/gfs-carrier-icon/images/{{imageUrl}}" /></a>
+            <a href="{{carrierURL}}" target="_blank"><img src="/bower_components/gfs-carrier-icon/images/{{imageUrl}}" /></a>
         </div>
-           
+
     </template>
 
     <script>
@@ -48,59 +54,59 @@
                 imageUrl: {
                     type: String
                 },
-				carrierURL: {
-					type: String
-				},
-				url: {
-					type: String,
-					value: "url"
-				},
+                carrierURL: {
+                    type: String
+                },
+                url: {
+                    type: String,
+                    value: "url"
+                },
                 _carrierIndex: {
                     type: Object,
                     value: {
                         'dpd': {
-                        	'small': 'small/DPD logo cube small.png',
-                        	'medium': 'medium/dpd.gif',
-                        	'large': 'medium/dpd.gif',
-                        	'largest': 'medium/dpd.gif',
-                        	'url': 'https://www.dpd.com/'
+                            'small': 'small/DPD logo cube small.png',
+                            'medium': 'medium/dpd.gif',
+                            'large': 'medium/dpd.gif',
+                            'largest': 'medium/dpd.gif',
+                            'url': 'https://www.dpd.com/'
 
                         },
                         'doddle': {
-                        	'small': 'small/doddle.gif',
-                        	'medium': 'medium/doddle.gif',
-                        	'large': 'medium/doddle.gif',
-                        	'largest': 'medium/doddle.gif',
-                        	'url': 'https://www.doddle.com/'
+                            'small': 'small/doddle.gif',
+                            'medium': 'medium/doddle.gif',
+                            'large': 'medium/doddle.gif',
+                            'largest': 'medium/doddle.gif',
+                            'url': 'https://www.doddle.com/'
                         },
                         'collectplus': {
-                        	'small': 'small/carrier-collectplus.png',
-                        	'medium': 'medium/collectplus.gif',
-                        	'large': 'medium/collectplus.gif',
-                        	'largest': 'medium/collectplus.gif',
-                        	'url': 'https://www.collectplus.co.uk/'
+                            'small': 'small/carrier-collectplus.png',
+                            'medium': 'medium/collectplus.gif',
+                            'large': 'medium/collectplus.gif',
+                            'largest': 'medium/collectplus.gif',
+                            'url': 'https://www.collectplus.co.uk/'
                         },
                         'hermes': {
-                        	'small': 'small/carrier-hermes.png',
-                        	'medium': 'medium/hermes.gif',
-                        	'large': 'medium/hermes.gif',
-                        	'largest': 'medium/hermes.gif',
-                        	'url': 'https://www.myhermes.co.uk/'
+                            'small': 'small/carrier-hermes.png',
+                            'medium': 'medium/hermes.gif',
+                            'large': 'medium/hermes.gif',
+                            'largest': 'medium/hermes.gif',
+                            'url': 'https://www.myhermes.co.uk/'
                         },
                         'inpost': {
-                        	'small': 'small/carrier-inpost.png',
-                        	'medium': 'medium/inpost.gif',
-                        	'large': 'medium/inpost.gif',
-                        	'largest': 'medium/inpost.gif',
-                        	'url': 'https://inpost.co.uk/'
+                            'small': 'small/carrier-inpost.png',
+                            'medium': 'medium/inpost.gif',
+                            'large': 'medium/inpost.gif',
+                            'largest': 'medium/inpost.gif',
+                            'url': 'https://inpost.co.uk/'
                         },
                         'dpdPickup': {
-                        	'small': 'small/pickup logo cube small.png',
-                        	'medium': 'medium/pickup logo cube small.png',
-                        	'large': 'medium/pickup logo cube small.png',
-                        	'largest': 'medium/pickup logo cube small.png',
-                        	'url': 'https://www.dpd.com/'
-                        }          
+                            'small': 'small/pickup logo cube small.png',
+                            'medium': 'medium/pickup logo cube small.png',
+                            'large': 'medium/pickup logo cube small.png',
+                            'largest': 'medium/pickup logo cube small.png',
+                            'url': 'https://www.dpd.com/'
+                        }
 
                     }
                 }
@@ -111,8 +117,8 @@
             },
 
             ready: function() {
-            	this.carrierURL = this._carrierIndex[this.carrierCode][this.url];
-	            this.imageUrl = this._carrierIndex[this.carrierCode][this.iconSize];
+                this.carrierURL = this._carrierIndex[this.carrierCode][this.url];
+                this.imageUrl = this._carrierIndex[this.carrierCode][this.iconSize];
             }
         });
     </script>
