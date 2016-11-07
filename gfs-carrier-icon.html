@@ -33,7 +33,7 @@
         </style>
 
         <div class$="icon {{iconSize}}">
-            <a href="{{carrierURL}}" target="_blank"><img clas="mp" src="{{imagePath}}" /></a>
+            <a href="{{carrierURL}}" target="_blank"><img src="{{imagePath}}" /></a>
         </div>
 
     </template>
@@ -136,7 +136,7 @@
             },
             onUrlChanged: function(carrierURL) {
                 this.countryCode = document.querySelector('gfs-supported-carriers').countrycode;
-                
+
                 if(carrierURL === "https://www.myhermes.co.uk/") {
                     switch(this.countryCode) {
                         case "FR":
@@ -155,13 +155,13 @@
 
                 switch(countryCode) {
                     case "DE":
-                        return carrierLink + '/' + iconSize + '/DE/' + providerName + '.png';
+                        return carrierLink + iconSize + '/DE/' + providerName + '.png';
                     case "FR":
                     case "BE":
                     case "ES":
-                        return carrierLink + '/' + iconSize + '/FR/' + providerName + '.png';
+                        return carrierLink + iconSize + '/FR/' + providerName + '.png';
                     default:
-                        return carrierLink + '/' + iconSize + '/GB/' + providerName + '.png';
+                        return carrierLink + iconSize + '/GB/' + providerName + '.png';
                 }
             },
         });
