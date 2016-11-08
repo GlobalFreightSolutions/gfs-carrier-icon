@@ -44,7 +44,7 @@
             is: "gfs-carrier-icon",
 
             properties: {
-                carrierCode: {
+                carrierName: {
                     type: String,
                     observer: 'onIconChanged',
                     notify: true,
@@ -119,8 +119,8 @@
 
             },
             ready: function() {
-                this.carrierURL = this._carrierIndex[this.carrierCode][this.url];
-                this.imageUrl = this._carrierIndex[this.carrierCode][this.iconSize];
+                this.carrierURL = this._carrierIndex[this.carrierName][this.url];
+                this.imageUrl = this._carrierIndex[this.carrierName][this.iconSize];
                 window.addEventListener('droppoint-changed', this.onDroppointChanged.bind(this), false);
             },
             onDroppointChanged: function (e) {
@@ -128,8 +128,8 @@
                 this.countryCode = this.droppointData.geoLocation.countryCode;
             },
             onIconChanged: function (providerName, countryCode) {
-                this.carrierCode = providerName.replace(/\s/g, '').toLowerCase();
-                this.carrierURL = this._carrierIndex[this.carrierCode][this.url];
+                this.carrierName = providerName.replace(/\s/g, '').toLowerCase();
+                this.carrierURL = this._carrierIndex[this.carrierName][this.url];
                 this.countryCode = document.querySelector('gfs-supported-carriers').countrycode;
                 // get the image url based on country code
                 this.imagePath = this._computeIcon(this.countryCode, providerName, this.iconSize);
