@@ -50,6 +50,10 @@
                     notify: true,
                     reflectToAttribute: true
                 },
+                countryCode: {
+                    type: String,
+                    value: "GB"
+                },
                 iconSize: {
                     type: String,
                     value: "medium"
@@ -127,16 +131,14 @@
                 this.set("droppointData", e.detail);
                 this.countryCode = this.droppointData.geoLocation.countryCode;
             },
-            onIconChanged: function (providerName, countryCode) {
+            onIconChanged: function (providerName) {
                 this.carrierName = providerName.replace(/\s/g, '').toLowerCase();
                 this.carrierURL = this._carrierIndex[this.carrierName][this.url];
-                this.countryCode = document.querySelector('gfs-supported-carriers').countrycode;
+
                 // get the image url based on country code
                 this.imagePath = this._computeIcon(this.countryCode, providerName, this.iconSize);
             },
             onUrlChanged: function(carrierURL) {
-                this.countryCode = document.querySelector('gfs-supported-carriers').countrycode;
-
                 if(carrierURL === "https://www.myhermes.co.uk/") {
                     switch(this.countryCode) {
                         case "FR":
