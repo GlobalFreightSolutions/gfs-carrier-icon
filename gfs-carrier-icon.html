@@ -10,7 +10,7 @@
                 width: 50px!important;
             }
             .small img {
-                height: 32px;
+                height: 48px;
             }
             .medium img {
                 height: 60px;
@@ -75,46 +75,79 @@
                     type: Object,
                     value: {
                         'dpd': {
-                            'small': 'small/DPD logo cube small.png',
-                            'medium': 'medium/dpd.png',
-                            'large': 'medium/dpd.png',
-                            'largest': 'medium/dpd.png',
                             'url': 'https://www.dpd.com/'
                         },
                         'doddle': {
-                            'small': 'small/doddle.png',
-                            'medium': 'medium/doddle.png',
-                            'large': 'medium/doddle.png',
-                            'largest': 'medium/doddle.png',
                             'url': 'https://www.doddle.com/'
                         },
                         'collectplus': {
-                            'small': 'small/carrier-collectplus.png',
-                            'medium': 'medium/collectplus.png',
-                            'large': 'medium/collectplus.png',
-                            'largest': 'medium/collectplus.png',
                             'url': 'https://www.collectplus.co.uk/'
                         },
                         'hermes': {
-                            'small': 'small/carrier-hermes.png',
-                            'medium': 'medium/hermes.png',
-                            'large': 'medium/hermes.png',
-                            'largest': 'medium/hermes.png',
                             'url': 'https://www.myhermes.co.uk/'
                         },
                         'inpost': {
-                            'small': 'small/carrier-inpost.png',
-                            'medium': 'medium/inpost.png',
-                            'large': 'medium/inpost.png',
-                            'largest': 'medium/inpost.png',
                             'url': 'https://inpost.co.uk/'
                         },
-                        'dpdPickup': {
-                            'small': 'small/pickup logo cube small.png',
-                            'medium': 'medium/pickup logo cube small.png',
-                            'large': 'medium/pickup logo cube small.png',
-                            'largest': 'medium/pickup logo cube small.png',
+                        'dpdpickup': {
                             'url': 'https://www.dpd.com/nl_privatecustomers#!pickup'
+                        },
+                        'yodel': {
+                            'url': 'https://www.yodel.co.uk/'
+                        },
+                        'anpost': {
+                            'url': 'http://www.anpost.ie/AnPost/'
+                        },
+                        'arrowxl': {
+                            'url': 'https://www.arrowxl.co.uk/'
+                        },
+                        'correos': {
+                            'url': 'https://www.correos.es/'
+                        },
+                        'dhlexpress': {
+                            'url': 'http://parcel.dhl.co.uk/'
+                        },
+                        'dhlfreight': {
+                            'url': 'http://parcel.dhl.co.uk/'
+                        },
+                        'interlinkexpress': {
+                            'url': 'http://www.interlinkexpress.com/'
+                        },
+                        'iparcel': {
+                            'url': 'https://www.i-parcel.com/'
+                        },
+                        'itella': {
+                            'url': 'http://www.itella.ee/english/'
+                        },
+                        'nightfreight': {
+                            'url': 'https://www.dxdelivery.com/'
+                        },
+                        'nightline': {
+                            'url': 'http://www.nightline.ie/'
+                        },
+                        'palletforce': {
+                            'url': 'http://www.palletforce.com/'
+                        },
+                        'parcelforce': {
+                            'url': 'http://www.parcelforce.com/'
+                        },
+                        'royalmail': {
+                            'url': 'http://www.royalmail.com/'
+                        },
+                        'sanmarinomail': {
+                            'url': 'http://www.sanmarinomail.sm/'
+                        },
+                        'seur': {
+                            'url': 'https://www.seur.com/en/'
+                        },
+                        'spring': {
+                            'url': 'http://www.spring-gds.com/'
+                        },
+                        'tuffnells': {
+                            'url': 'http://www.tuffnells.co.uk/home'
+                        },
+                        'ukmail': {
+                            'url': 'https://www.ukmail.com/'
                         }
                     }
                 }
@@ -123,8 +156,8 @@
 
             },
             ready: function() {
-                this.carrierURL = this._carrierIndex[this.carrierName][this.url];
-                this.imageUrl = this._carrierIndex[this.carrierName][this.iconSize];
+                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.url];
+                this.imageUrl = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.iconSize];
                 window.addEventListener('droppoint-changed', this.onDroppointChanged.bind(this), false);
             },
             onDroppointChanged: function (e) {
@@ -132,8 +165,7 @@
                 this.countryCode = this.droppointData.geoLocation.countryCode;
             },
             onIconChanged: function (providerName) {
-                this.carrierName = providerName.replace(/\s/g, '').toLowerCase();
-                this.carrierURL = this._carrierIndex[this.carrierName][this.url];
+                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.url];
 
                 // get the image url based on country code
                 this.imagePath = this._computeIcon(this.countryCode, providerName, this.iconSize);
@@ -157,13 +189,13 @@
 
                 switch(countryCode) {
                     case "DE":
-                        return carrierLink + iconSize + '/DE/' + providerName + '.png';
+                        return carrierLink + iconSize + '/DE/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
                     case "FR":
                     case "BE":
                     case "ES":
-                        return carrierLink + iconSize + '/FR/' + providerName + '.png';
+                        return carrierLink + iconSize + '/FR/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
                     default:
-                        return carrierLink + iconSize + '/GB/' + providerName + '.png';
+                        return carrierLink + iconSize + '/GB/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
                 }
             },
         });
