@@ -6,17 +6,18 @@
             .icon {
                 display: inline-block;
             }
-            gfs-carrier-icon img {
-                width: 50px!important;
-            }
             .small img {
-                height: 48px;
+                height: 58px;
+                margin: 0 0 15px;
             }
             .medium img {
                 height: 60px;
             }
             .large img {
                 height: 78px;
+            }
+            .largest img {
+                height: 100%;
             }
 
             @media (max-width: 490px) {
@@ -33,7 +34,7 @@
         </style>
 
         <div class$="icon {{iconSize}}">
-            <a href="{{carrierURL}}" target="_blank"><img src="{{imagePath}}" /></a>
+            <a href="{{carrierURL}}" target="_blank"><img src="{{imagePath}}" title="{{carrierName}}" /></a>
         </div>
 
     </template>
