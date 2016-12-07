@@ -10,4 +10,4 @@ The `gfs-carrier-icon` widget is used by the other widgets in the GFS Checkout c
 </gfs-carrier-icon>
 ```
 
-More info and all the available properties can be found at [GFS widget portal](http://gfsdeveloperportal.azurewebsites.net/documentation/gfs-checkout/the-gfs-checkout-widgets/the-carrier-icon-widget "The GFS Carrier Icon Widget")
+More info and all the available properties can be found at [GFS widget portal](http://gfsdeveloperportal.azurewebsites.net/documentation/gfs-checkout/the-gfs-checkout-widgets/carrier-icon-widget/ "The GFS Carrier Icon Widget")
