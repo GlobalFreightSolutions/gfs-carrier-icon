@@ -160,8 +160,8 @@
 
             },
             ready: function() {
-                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.url];
-                this.imageUrl = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.iconSize];
+                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[\s\_\-]/g, '').toLowerCase()][this.url];
+                this.imageUrl = this._carrierIndex[this.carrierName.replace(/[\s\_\-]/g, '').toLowerCase()][this.iconSize];
                 window.addEventListener('droppoint-changed', this.onDroppointChanged.bind(this), false);
             },
             onDroppointChanged: function (e) {
@@ -169,7 +169,7 @@
                 this.countryCode = this.droppointData.geoLocation.countryCode;
             },
             onIconChanged: function (providerName) {
-                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[_-]/g, '').toLowerCase()][this.url];
+                this.carrierURL = this._carrierIndex[this.carrierName.replace(/[\s\_\-]/g, '').toLowerCase()][this.url];
 
                 // get the image url based on country code
                 this.imagePath = this._computeIcon(this.countryCode, providerName, this.iconSize);
@@ -193,13 +193,13 @@
 
                 switch(countryCode) {
                     case "DE":
-                        return carrierLink + iconSize + '/DE/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
+                        return carrierLink + iconSize + '/DE/' + providerName.replace(/[\s\_\-]/g, '').toLowerCase() + '.png';
                     case "FR":
                     case "BE":
                     case "ES":
-                        return carrierLink + iconSize + '/FR/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
+                        return carrierLink + iconSize + '/FR/' + providerName.replace(/[\s\_\-]/g, '').toLowerCase() + '.png';
                     default:
-                        return carrierLink + iconSize + '/GB/' + providerName.replace(/[_-]/g, '').toLowerCase() + '.png';
+                        return carrierLink + iconSize + '/GB/' + providerName.replace(/[\s\_\-]/g, '').toLowerCase() + '.png';
                 }
             },
         });
