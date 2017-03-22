@@ -1,6 +1,14 @@
-﻿<link rel="import" href="../polymer/polymer.html" />
-<dom-module id="gfs-carrier-icon">
+﻿﻿<link rel="import" href="../polymer/polymer.html" />
 
+<!--
+    `gfs-carrier-icon`
+    The Carrier Icon widget is used by the other widgets in the GFS Checkout collection 
+    and is also available to use for display of carrier icons within your eCommerce website
+
+    @demo demo/index.html
+-->
+
+<dom-module id="gfs-carrier-icon">
     <template>
         <style>
             .icon {
@@ -20,15 +28,23 @@
                 height: 100%;
             }
 
-            @media (max-width: 490px) {
-                .icon:nth-child(1n) {
-                    margin: 0 0 10px
+            @media (max-width: 614px) {
+                .small img {
+                    height: 42px;
+                }
+
+                .medium img {
+                    height: 52px;
+                }
+
+                .large img {
+                    height: 62px;
                 }
             }
 
-            @media (max-width: 320px) {
-                .medium img {
-                    height: 58px;
+            @media (max-width: 490px) {
+                .icon:nth-child(1n) {
+                    margin: 0 0 10px;
                 }
             }
         </style>
@@ -155,9 +171,6 @@
                         }
                     }
                 }
-            },
-            listeners: {
-
             },
             ready: function() {
                 this.carrierURL = this._carrierIndex[this.carrierName.replace(/[\s\_\-]/g, '').toLowerCase()][this.url];

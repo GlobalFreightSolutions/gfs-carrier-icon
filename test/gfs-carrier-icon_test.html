@@ -1,0 +1,45 @@
+﻿﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <script src="../bower_components/web-component-tester/browser.js"></script>
+
+        <link rel="import" href="../gfs-carrier-icon.html">
+    </head>
+    <body>
+        <test-fixture id="gfsCarrierIcon">
+            <template>
+                <gfs-carrier-icon carrier-name="dpdpickupinfo" country-code="GB" icon-size="medium"></gfs-carrier-icon>
+            </template>
+        </test-fixture>
+
+        <script>
+            suite('gfs-carrier-icon', function() {
+                var gfsCarrierIcon = fixture('gfsCarrierIcon');
+
+                test('instantiating the element works', function() {
+                    expect(gfsCarrierIcon).to.be.ok;
+                });
+
+                test('countrycode is set to GB', function() {
+                    expect(gfsCarrierIcon.countryCode).to.be.equal("GB");
+                });
+
+                test('carrier name is DPD Pickup Info', function() {
+                    expect(gfsCarrierIcon.carrierName).to.be.equal("dpdpickupinfo");
+                });
+
+                test('load the small icon version', function() {
+                    expect(gfsCarrierIcon.iconSize).to.be.equal("medium");
+                });
+
+                test('can be assigned an icon with the src attribute', function() {
+                    expect(gfsCarrierIcon.imagePath).to.match(/bower_components\/gfs-carrier-icon\/images\/medium\/GB\/dpdpickupinfo\.png/);
+                });
+            });
+        </script>
+    </body>
+</html>

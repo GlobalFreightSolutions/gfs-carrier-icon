@@ -1,20 +1,33 @@
 {
-	"name": "gfs-carrier-icon",
-	"version": "0.0.2",
-	"description": "Add a description",
+	"name": "gfs-carrier-info",
+	"version": "0.0.1",
+    "description": "Carrier Information widget is used to display a carrier icon, service description and other information for 'click & collect' style services",
+    "authors": [
+        "Global Freight Solutions Ltd <devsupport@justshoutgfs.com>"
+    ],
+    "keywords": [
+        "carrier icon",
+        "icon",
+        "gfs",
+        "checkout",
+        "polymer",
+        "web-components"
+    ],
 	"dependencies": {
-		"polymer": "~1.6.0"
+		"polymer": "~1.6.0",
+		"gfs-carrier-icon": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon.git#master"
 	},
-	"devdependencies": {
+	"devDependencies": {
 	    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
 		"iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
 		"web-component-tester": "^4.0.0",
 		"webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
 	},
-	"main":"gfs-carrier-icon.html",
+    "main": "gfs-carrier-info.html",
+    "license": "Apache 2.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon"
+		"url": "https://github.com/GlobalFreightSolutions/gfs-carrier-info.git"
 	},
 	"ignore": [
 	]
