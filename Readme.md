@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=develop)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon)
+[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=develop)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon) [![Build Status](https://saucelabs.com/buildstatus/globalfreightsolutions)](https://saucelabs.com/beta/builds/6ee9746285814786b86c5f8cfbe0c219)
 
 
 # &lt;gfs-carrier-icon&gt;
