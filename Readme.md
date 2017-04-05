@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=master)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon)
+[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=develop)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon)
 
 
 # &lt;gfs-carrier-icon&gt;
@@ -7,18 +7,28 @@
 
 The `gfs-carrier-icon` widget is used by the other widgets in the GFS Checkout collection, but is also available to use for display of carrier icons within your eCommerce website.
 
-
 ## Install
 
 ```bash
 # via bower
-$ bower install gfs-carrier-icon
+$ bower install --save gfs-carrier-icon
 ```
 
 ## Usage
+
+1. Import Web Components' polyfill:
+
 ```html
-<link rel="import" href="path_to_bower_components/gfs-carrier-icon/gfs-carrier-icon.html" />
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 ```
+
+2. Import Custom Element:
+
+```html
+<link rel="import" href="bower_components/gfs-carrier-icon/gfs-carrier-icon.html">
+```
+
+3. Start using it!
 
 <!---
 ```
@@ -43,6 +53,22 @@ $ bower install gfs-carrier-icon
 More info and all the available properties can be found at [GFS widget portal](http://gfsdeveloperportal.azurewebsites.net/info/documentation/gfs-checkout/the-gfs-checkout-widgets/carrier-icon-widget/ "The GFS Carrier Icon Widget")
 
 
-### License
+## Testing
 
-Apache License 2.0
+The tests are compatible with [web-component-tester](https://github.com/Polymer/web-component-tester). Install it via:
+
+```bash
+$ npm install -g web-component-tester
+```
+
+Then, you can run your tests on all of your local browsers via:
+
+```bash
+$ wct
+```
+
+You can use `wct -p` so you can keep the browsers alive after test runs.
+
+## License
+
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
