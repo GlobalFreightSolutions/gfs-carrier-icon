@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=develop)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon) [![Build Status](https://saucelabs.com/buildstatus/globalfreightsolutions)](https://saucelabs.com/beta/builds/6ee9746285814786b86c5f8cfbe0c219)
+[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=master)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon)
 
 
 # &lt;gfs-carrier-icon&gt;
@@ -48,7 +48,7 @@ $ bower install --save gfs-carrier-icon
 </gfs-carrier-icon>
 ```
 
-More info and all the available properties can be found at [GFS widget portal](http://gfsdeveloperportal.azurewebsites.net/info/documentation/gfs-checkout/the-gfs-checkout-widgets/carrier-icon-widget/ "The GFS Carrier Icon Widget")
+More info and all the available properties can be found at [GFS widget portal](http://developer.justshoutgfs.com/info/documentation/gfs-checkout/the-gfs-checkout-widgets/carrier-icon-widget/ "The GFS Carrier Icon Widget")
 
 
 ## License
