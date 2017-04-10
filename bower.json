@@ -1,7 +1,7 @@
 {
-	"name": "gfs-carrier-info",
-	"version": "0.0.1",
-    "description": "Carrier Information widget is used to display a carrier icon, service description and other information for 'click & collect' style services",
+	"name": "gfs-carrier-icon",
+	"version": "1.0.0",
+    "description": "Carrier Icon widget is used by the other widgets in the GFS Checkout collection and is also available to use for display of carrier icons",
     "authors": [
         "Global Freight Solutions Ltd <devsupport@justshoutgfs.com>"
     ],
