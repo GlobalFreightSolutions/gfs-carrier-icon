@@ -24,7 +24,7 @@
 		"webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
 	},
     "main": "gfs-carrier-icon.html",
-    "license": "Apache 2.0",
+    "license": "Apache-2.0",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon.git"
