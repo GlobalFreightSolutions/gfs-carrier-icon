@@ -27,5 +27,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon.git"
+    },
+    "resolutions": {
+        "polymer": "^1.10.0"
     }
 }
