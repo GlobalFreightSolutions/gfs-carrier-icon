@@ -191,18 +191,18 @@
                 if(carrierURL === "https://www.myhermes.co.uk/") {
                     switch(this.countryCode) {
                         case "FR":
-                            return this.carrierURL = "http://www.mondialrelay.fr/";
+                            return this.carrierURL = "https://www.mondialrelay.fr/";
                         case "BE":
-                            return this.carrierURL = "http://www.mondialrelay.be/fr-BE/";
+                            return this.carrierURL = "https://www.mondialrelay.be/fr-BE/";
                         case "ES":
-                            return this.carrierURL = "http://www.puntopack.es/";
+                            return this.carrierURL = "https://www.puntopack.es/";
                         default:
                             return this.carrierURL;
                     }
                 }
             },
             _computeIcon: function(countryCode, providerName, iconSize) {
-                var carrierLink = this.resolveUrl('//gfswidgetcdn.azurewebsites.net/images/widgets/carriers/');
+                var carrierLink = this.resolveUrl('//gfswidgetcdn.azurewebsites.net/images/widgets/carriers');
 
                 switch(countryCode) {
                     case "DE":
