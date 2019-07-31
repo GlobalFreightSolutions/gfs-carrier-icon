@@ -35,7 +35,7 @@ jobs:
         paths: .
 
   deploy_beta:
-    << *defaults
+    <<: *defaults
     steps:
       - attach_workspace:
         at: ~/repo
