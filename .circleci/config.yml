@@ -9,7 +9,7 @@ jobs:
   prequisites:
     <<: *defaults
     steps:
-      - run: npm install polymer-cli
+      - run: sudo npm install -g polymer-cli
 
   test:
     <<: *defaults
@@ -28,7 +28,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.jsone" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - persist_to_workspace:
           root: ~/repo
@@ -78,7 +78,7 @@ workflows:
               ignore: master
       - deploy_beta:
           requires:
-            - test
+            - prequisites
           filters:
             tags:
               only: /^.*-preview/
@@ -86,7 +86,7 @@ workflows:
               ignore: master
       - deploy:
           requires:
-            - test
+            - prequisites
           filters:
             tags:
               only: /^.*/
