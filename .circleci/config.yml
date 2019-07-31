@@ -70,7 +70,7 @@ workflows:
               ignore: master
       - deploy_beta:
           requires:
-            - build
+            - prequisites
           filters:
             tags:
               only: /^.*-preview/
@@ -78,7 +78,7 @@ workflows:
               ignore: master
       - deploy:
           requires:
-            - build
+            - prequisites
           filters:
             tags:
               only: /^.*/
