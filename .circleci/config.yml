@@ -25,10 +25,6 @@ jobs:
         name: Install dependancies
         command: npm install
 
-      - run:
-        name: Run tests
-        command: polymer test
-
       - save_cache:
           paths:
             - node_modules
@@ -67,38 +63,28 @@ workflows:
   test-deploy-beta:
     jobs:
       - prequisites:
-        filters:
-          tags:
-            only: /^v.*-preview*/
+          filters:
+            tags:
+              only: /^v.*-preview*/
+            branches:
+              ignore: master
       - test:
-        requires:
-          - prequisites
-        filters:
-          tags:
-            only: /^v.*-preview*/
-      - deploy-beta:
-        requires:
-          - test
-        filters:
-          tags:
-            only: /^v.*-preview*/
+          requires:
+            - prequisites
+          filters:
+            tags:
+              only: /^v.*-preview*/
+            branches:
+              ignore: master
   test-deploy:
     jobs:
       - prequisites:
-        filters:
-          tags:
-            only: /^v.*/
+          filters:
+            tags:
+              only: /^v.*/
       - test:
-        requires:
-          - prequisites
-        filters:
-          tags:
-            only: /^v.*/
-      - deploy:
-        requires:
-          - test
-        filters:
-          tags:
-            only: /^v.*/
-          branches:
-            ignore: /.*/
+          requires:
+            - prequisites
+          filters:
+            tags:
+              only: /^v.*/
