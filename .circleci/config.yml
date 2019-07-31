@@ -31,29 +31,29 @@ jobs:
           key: v1=dependencies-{{ checksum "package.jsone" }}
 
       - persist_to_workspace:
-        root: ~/repo
-        paths: .
+          root: ~/repo
+          paths: .
 
   deploy_beta:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: ~/repo
+          at: ~/repo
       - run:
-        name: Authenticate with NPM
-        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       -run:
         name: Publish beta package
         command: npm publish --tag beta --access public
 
   deploy:
-    << *defaults
+    <<: *defaults
     steps:
       - attach_workspace:
-        at: ~/repo
+          at: ~/repo
       - run:
-        name: Authenticate with NPM
-        command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          name: Authenticate with NPM
+          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
       -run:
         name: Publish package
         command: npm publish --access public
