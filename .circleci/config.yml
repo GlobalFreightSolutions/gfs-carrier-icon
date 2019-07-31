@@ -22,13 +22,13 @@ jobs:
             - v1-dependencies-
 
       - run:
-        name: Install dependancies
-        command: npm install
+          name: Install dependancies
+          command: npm install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1=dependencies-{{ checksum "package.jsone" }}
+          key: v1-dependencies-{{ checksum "package.jsone" }}
 
       - persist_to_workspace:
           root: ~/repo
@@ -42,9 +42,9 @@ jobs:
       - run:
           name: Authenticate with NPM
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-      -run:
-        name: Publish beta package
-        command: npm publish --tag beta --access public
+      - run:
+          name: Publish beta package
+          command: npm publish --tag beta --access public
 
   deploy:
     <<: *defaults
@@ -54,9 +54,9 @@ jobs:
       - run:
           name: Authenticate with NPM
           command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-      -run:
-        name: Publish package
-        command: npm publish --access public
+      - run:
+          name: Publish package
+          command: npm publish --access public
 
 workflows:
   version: 2
