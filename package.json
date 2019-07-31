@@ -1,6 +1,17 @@
 {
-    "name": "gfs-carrier-icon",
-    "version": "2.0.0",
+    "description": "Carrier icon widget is used by the other widgets in the GFS Checkout collection and is also available to use for display of carrier icons",
+    "keywords": [
+        "GFS",
+        "icon",
+        "web-components",
+        "web-component"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/GlobalFreightSolutions/gfs-carrier-icon.git"
+    },
+    "name": "@gfsdeliver/gfs-carrier-icon",
+    "version": "2.0.0-preview.1",
     "main": "gfs-carrier-icon.js",
     "author": "Global Freight Solutions",
     "license": "Apache-2.0",
@@ -8,11 +19,11 @@
         "start": "polymer serve"
     },
     "dependencies": {
-        "@polymer/polymer": "^3.0.0",
-        "@webcomponents/webcomponentsjs": "^1.2.0"
+        "@polymer/polymer": "^3.0.0"
     },
     "devDependencies": {
         "polymer-cli": "^1.7.1",
-        "wct-browser-legacy": "^1.0.0"
+        "wct-browser-legacy": "^1.0.0",
+        "@webcomponents/webcomponentsjs": "^2.0.0"
     }
 }
