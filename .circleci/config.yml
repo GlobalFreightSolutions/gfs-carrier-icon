@@ -9,7 +9,7 @@ jobs:
   prequisites:
     <<: *defaults
     steps:
-      - run: npm install -g polymer-cli
+      - run: npm install polymer-cli
 
   test:
     <<: *defaults
