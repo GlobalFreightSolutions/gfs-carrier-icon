@@ -60,7 +60,7 @@ jobs:
 
 workflows:
   version: 2
-  build-deploy:
+  test-deploy-beta:
     jobs:
       - prequisites:
           filters:
@@ -68,9 +68,17 @@ workflows:
               only: /^v.*-preview*/
             branches:
               ignore: master
-      - deploy_beta:
+      - test:
           requires:
             - prequisites
+          filters:
+            tags:
+              only: /^v.*-preview*/
+            branches:
+              ignore: master
+      - deploy_beta:
+          requires:
+            - test
           filters:
             tags:
               only: /^.*-preview/
@@ -78,7 +86,7 @@ workflows:
               ignore: master
       - deploy:
           requires:
-            - prequisites
+            - test
           filters:
             tags:
               only: /^.*/
