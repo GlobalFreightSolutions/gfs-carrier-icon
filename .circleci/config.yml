@@ -65,9 +65,7 @@ workflows:
       - prequisites:
           filters:
             tags:
-              only: /^v.*-preview*/
-            branches:
-              ignore: master
+              only: /.*/
       - test:
           requires:
             - prequisites
