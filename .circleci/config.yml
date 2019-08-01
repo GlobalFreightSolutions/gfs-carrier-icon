@@ -6,11 +6,6 @@ defaults: &defaults
     - image: circleci/node:7.10
 
 jobs:
-  prequisites:
-    <<: *defaults
-    steps:
-      - run: sudo npm install -g polymer-cli
-
   test:
     <<: *defaults
     steps:
@@ -62,21 +57,13 @@ workflows:
   version: 2
   test-deploy-beta:
     jobs:
-      - prequisites:
+      - test:
           filters:
             tags:
               only: /.*/
-      - test:
-          requires:
-            - prequisites
-          filters:
-            tags:
-              only: /^v.*-preview*/
-            branches:
-              ignore: master
       - deploy_beta:
           requires:
-            - prequisites
+            - test
           filters:
             tags:
               only: /^.*-preview/
