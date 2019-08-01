@@ -71,7 +71,7 @@ workflows:
               ignore: master
       - deploy:
           requires:
-            - prequisites
+            - test
           filters:
             tags:
               only: /^.*/
