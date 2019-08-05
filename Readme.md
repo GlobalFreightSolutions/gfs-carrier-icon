@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon.svg?branch=master)](https://travis-ci.org/GlobalFreightSolutions/gfs-carrier-icon)
-
+[![CircleCI](https://circleci.com/gh/GlobalFreightSolutions/gfs-carrier-icon/tree/v2.preview.svg?style=svg)](https://circleci.com/gh/GlobalFreightSolutions/gfs-carrier-icon/tree/v2.preview)
 
 # &lt;gfs-carrier-icon&gt;
 
@@ -8,44 +7,38 @@ The `gfs-carrier-icon` widget is used by the other widgets in the GFS Checkout c
 ## Install
 
 ```bash
-# via bower
-$ bower install --save gfs-carrier-icon
+$ npm i --save @gfsdeliver/gfs-carrier-icon/gfs-carrier-icon.js
 ```
 
-## Usage
-
-1. Import Web Components' polyfill:
+### Import In a HTML file:
 
 ```html
-<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<html>
+    <head>
+        <script type="module">
+            import '@gfsdeliver/gfs-carrier-icon/gfs-carrier-icon.js';
+        </script>
+    </head>
+    <body>
+        <gfs-carrier-icon carrier-name="dpd" icon-size="medium" country-code="GB"></gfs-carrier-icon>
+    </body>
+</html>
 ```
 
-2. Import Custom Element:
+### In a Polymer 3 element
 
-```html
-<link rel="import" href="bower_components/gfs-carrier-icon/gfs-carrier-icon.html">
-```
+```js
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@gfsdeliver/gfs-carrier-icon/gfs-carrier-icon.js';
 
-3. Start using it!
-
-<!---
-```
-<custom-element-demo>
-    <template>
-        <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-        <link rel="import" href="gfs-carrier-icon.html">
-        <next-code-block></next-code-block>
-    </template>
-</custom-element-demo>
-```
--->
-
-```html
-<gfs-carrier-icon
-    carrier-name="dpd"
-    icon-size="medium"
-    country-code="GB">
-</gfs-carrier-icon>
+class CustomElement extends PolymerElement {
+    static get template() {
+        return html`
+            <gfs-carrier-icon carrier-name="dpd" icon-size="medium" country-code="GB"></gfs-carrier-icon>
+        `;
+    }
+}
+customElements.define('custom-element', CustomElement);
 ```
 
 More info and all the available properties can be found at [GFS widget portal](http://developer.justshoutgfs.com/info/documentation/gfs-checkout/the-gfs-checkout-widgets/carrier-icon-widget/ "The GFS Carrier Icon Widget")

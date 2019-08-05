@@ -1,0 +1,56 @@
+﻿﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+        <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+        <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+    </head>
+    <body>
+        <test-fixture id="gfsCarrierIcon">
+            <template>
+                <gfs-carrier-icon carrier-name="dpdpickupinfo" country-code="GB" icon-size="medium"></gfs-carrier-icon>
+            </template>
+        </test-fixture>
+
+        <script type="module">
+            import '@polymer/iron-test-helpers/mock-interactions.js';
+            import '../gfs-carrier-icon.js';
+
+            suite('gfs-carrier-icon', function () {
+                var gfsCarrierIcon;
+
+                setup(function () {
+                    gfsCarrierIcon = fixture('gfsCarrierIcon');
+                });
+
+                test('instantiating the element works', function () {
+                    expect(gfsCarrierIcon).to.be.ok;
+                });
+
+                test('countrycode is set to GB', function () {
+                    expect(gfsCarrierIcon.countryCode).to.be.eql("GB");
+                });
+
+                test('can change countrycode', function () {
+                    gfsCarrierIcon.countryCode = "GR";
+                    expect(gfsCarrierIcon.countryCode).to.be.eql("GR");
+                });
+
+                test('carrier name is DPD Pickup Info', function () {
+                    expect(gfsCarrierIcon.carrierName).to.be.eql("dpdpickupinfo");
+                });
+
+                test('load the small icon version', function () {
+                    expect(gfsCarrierIcon.iconSize).to.be.eql("medium");
+                });
+
+                test('can change icon', function () {
+                    gfsCarrierIcon.carrierName = "hermes";
+                    expect(gfsCarrierIcon.carrierName).to.be.eql("hermes");
+                });
+            });
+        </script>
+    </body>
+</html>
